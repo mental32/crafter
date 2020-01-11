@@ -15,6 +15,7 @@ def cube_vertices(x: int, y: int, z: int, n: int) -> List[int]:
     ]
 # fmt: on
 
+@lru_cache
 def normalize(position):
     """ Accepts `position` of arbitrary precision and returns the block
     containing that position.
@@ -32,7 +33,7 @@ def normalize(position):
     x, y, z = (int(round(x)), int(round(y)), int(round(z)))
     return (x, y, z)
 
-
+@lru_cache
 def sectorize(position):
     """ Returns a tuple representing the sector for the given `position`.
 
