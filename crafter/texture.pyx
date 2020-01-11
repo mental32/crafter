@@ -11,7 +11,7 @@ from pyglet.gl import (
 )
 
 
-from .utils import cube_vertices
+from .utils cimport cube_vertices
 
 TextureVerticies = Tuple[int, int, int, int, int, int, int, int]
 

@@ -1,9 +1,10 @@
 from typing import List
+from functools import lru_cache
 
 from .constants import SECTOR_SIZE
 
 # fmt: off
-def cube_vertices(x: int, y: int, z: int, n: int) -> List[int]:
+cdef list cube_vertices(x: int, y: int, z: int, n: int):
     """Return the vertices of the cube at position x, y, z with size 2*n."""
     return [
         x - n, y + n, z - n, x - n, y + n, z + n, x + n, y + n, z + n, x + n, y + n, z - n,  # top

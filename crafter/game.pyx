@@ -52,7 +52,7 @@ from pyglet.gl import (
 from .texture import BRICK, SAND, GRASS, STONE
 
 from .world import World
-from .utils import normalize, cube_vertices, sectorize
+from .utils import normalize, sectorize
 from .constants import (
     GRAVITY,
     JUMP_SPEED,
@@ -64,9 +64,10 @@ from .constants import (
     TICKS_PER_SEC
 )
 
+from .utils cimport cube_vertices
+
 
 class Game(Window):
-
     # Whether or not the window exclusively captures the mouse.
     exclusive: bool = False
 

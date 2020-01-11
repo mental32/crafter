@@ -10,7 +10,9 @@ from pyglet import image
 
 from .texture import GRASS, SAND, BRICK, STONE
 from .constants import TEXTURE_PATH, FACES, TICKS_PER_SEC
-from .utils import sectorize, cube_vertices, normalize
+from .utils import sectorize, normalize
+
+from .utils cimport cube_vertices
 
 class World:
     def __init__(self):
