@@ -4,10 +4,6 @@ ARTIFACTS := $(wildcard **/*.c) $(wildcard **/*.so)
 
 all: build
 
-rebuild:
-	make clean
-	make run
-
 clean:
 	-rm -v $(ARTIFACTS)
 	python setup.py clean --all
@@ -17,3 +13,7 @@ build:
 
 run: all
 	python -m crafter
+
+rebuild:
+	make clean
+	make run

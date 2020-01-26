@@ -1,12 +1,11 @@
-from pyglet.app import run as _pyglet_app_run
+from . import Game
 
-from crafter import Game
+from pyglet.app import run as _pyglet_app_run
 
 
 def main():
-    window = Game(width=800, height=600, caption="Minecraft")
-    window.setup()
-    _pyglet_app_run()
+    with Game(width=800, height=600, caption="Minecraft"):
+        _pyglet_app_run()
 
 
 if __name__ == "__main__":

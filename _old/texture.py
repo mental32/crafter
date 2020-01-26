@@ -11,7 +11,7 @@ from pyglet.gl import (
 )
 
 
-from .utils cimport cube_vertices
+from .utils import cube_vertices
 
 TextureVerticies = Tuple[int, int, int, int, int, int, int, int]
 
@@ -39,8 +39,14 @@ class Texture:
     def __iter__(self):
         return chain(self.x, self.y, self.z)
 
+    @classmethod
+    def repeated(cls, pos: Tuple[int, int]) -> "Texture":
+        return cls(top=pos, bottom=pos, side=pos)
+
 
 GRASS = Texture((1, 0), (0, 1), (0, 0))
-SAND = Texture((1, 1), (1, 1), (1, 1))
-BRICK = Texture((2, 0), (2, 0), (2, 0))
-STONE = Texture((2, 1), (2, 1), (2, 1))
+
+DIRT = Texture.repeated((0, 1))
+SAND = Texture.repeated((1, 1))
+BRICK = Texture.repeated((2, 0))
+STONE = Texture.repeated((2, 1))
